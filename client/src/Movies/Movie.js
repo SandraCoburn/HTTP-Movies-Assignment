@@ -30,6 +30,12 @@ export default class Movie extends React.Component {
     const addToSavedList = this.props.addToSavedList;
     addToSavedList(this.state.movie);
   };
+  handleUpdate = e => {
+    e.preventDefault();
+    this.props.addMovieToUpdate(this.state.movie);
+    this.props.history.push(`/update-movie/${this.state.movie}`);
+    console.log(this.state.movie);
+  };
 
   render() {
     if (!this.state.movie) {
@@ -41,6 +47,9 @@ export default class Movie extends React.Component {
         <MovieCard movie={this.state.movie} />
         <div className="save-button" onClick={this.saveMovie}>
           Save
+        </div>
+        <div className="update-button">
+          <button onClick={this.handleUpdate}>Update</button>
         </div>
       </div>
     );
