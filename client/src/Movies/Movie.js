@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import MovieCard from "./MovieCard";
+import UpdateMovie from "./UpdateMovie";
 export default class Movie extends React.Component {
   constructor(props) {
     super(props);
@@ -32,9 +33,12 @@ export default class Movie extends React.Component {
   };
   handleUpdate = e => {
     e.preventDefault();
-    this.props.addMovieToUpdate(this.state.movie);
-    this.props.history.push(`/update-movie/${this.state.movie}`);
-    console.log(this.state.movie);
+    this.props.history.push(`/update-movie/${this.state.movie.id}`);
+    console.log("movie comp", this.state.movie);
+  };
+  handleDelete = () => {
+    axios.delete(`http://localhost:5000/api/movies/${this.state.movie.id}`);
+    this.props.history.push("/");
   };
 
   render() {
@@ -50,6 +54,9 @@ export default class Movie extends React.Component {
         </div>
         <div className="update-button">
           <button onClick={this.handleUpdate}>Update</button>
+        </div>
+        <div className="delete-button">
+          <button onClick={this.handleDelete}>Delete</button>
         </div>
       </div>
     );
