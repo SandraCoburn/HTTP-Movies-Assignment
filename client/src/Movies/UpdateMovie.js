@@ -78,7 +78,7 @@ const UpdateMovie = ({ movieToUpdate, setMovieToUpdate, ...props }) => {
           onChange={changeHandler}
         />
         <div className="baseline" />
-        <label htmlFor="stars">Stars: </label>
+        <label htmlFor="stars">Actors: </label>
 
         <input
           type="text"

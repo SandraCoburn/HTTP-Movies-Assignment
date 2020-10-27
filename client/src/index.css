@@ -14,6 +14,8 @@ body {
   cursor: pointer;
   position: relative;
   margin: 1rem auto;
+  text-align: center;
+  width: 70%;
 }
 
 .movie-director {
@@ -88,7 +90,7 @@ body {
 
 .home-button {
   padding: 5px 10px;
-  background-color: lightskyblue;
+  background-color: lightseagreen;
 }
 
 .movie-warning {
@@ -98,7 +100,7 @@ body {
 
 form {
   margin: 0 auto;
-  width: 300px;
+  width: 50%;
 }
 
 input {
@@ -108,10 +110,10 @@ input {
 
 .baseline,
 input {
-  background-color: #fff;
+  background-color: rgb(248, 245, 245);
   font-size: 21px;
   height: 50px;
-  width: 300px;
+  width: 50%;
   padding: 0 8px;
   color: #1c5d76;
 }
@@ -165,8 +167,10 @@ form button {
   background-color: lightseagreen;
 }
 h2,
+p,
 .item-header h2,
 .item-header h4 {
   color: #1c5d76;
   margin: 0;
+  text-align: center;
 }
